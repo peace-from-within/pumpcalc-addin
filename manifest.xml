@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp
+  xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+  xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+  xsi:type="TaskPaneApp">
+
+  <!--
+    PUMPCALC Custom Functions Add-in
+    ---------------------------------------------------------------------
+    Purpose: exposes the 21 pump-hydraulics calculation functions
+    (Module_For_Equation.bas) as Excel functions under the PUMPCALC
+    namespace, WITHOUT embedding the calculation logic in the workbook.
+    The workbook only ever stores calls like =PUMPCALC.CV_PRESS_DROP(...);
+    the actual formulas/algorithms live in functions.js, served from this
+    add-in's hosting URL and never shipped inside the .xlsx/.xlsm file.
+
+    Deployment: intended for the "Integrated Apps" path in the customer's
+    Microsoft 365 admin center (Admin center > Settings > Integrated apps
+    > Upload custom apps > provide this manifest's URL). This keeps the
+    add-in private to the customer's tenant - no AppSource listing needed.
+  -->
+
+  <Id>PLACEHOLDER-GENERATE-NEW-GUID</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>PLACEHOLDER-COMPANY-NAME</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="PUMPCALC Functions" />
+  <Description DefaultValue="Pump hydraulics calculation functions (PUMPCALC namespace) for pump differential pressure / head / control valve sizing workbooks." />
+  <IconUrl DefaultValue="https://PLACEHOLDER-HOSTING-DOMAIN/assets/icon-32.png" />
+  <HighResolutionIconUrl DefaultValue="https://PLACEHOLDER-HOSTING-DOMAIN/assets/icon-80.png" />
+  <SupportUrl DefaultValue="https://PLACEHOLDER-HOSTING-DOMAIN/support" />
+
+  <AppDomains>
+    <AppDomain>https://PLACEHOLDER-HOSTING-DOMAIN</AppDomain>
+  </AppDomains>
+
+  <Hosts>
+    <Host Name="Workbook" />
+  </Hosts>
+
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://PLACEHOLDER-HOSTING-DOMAIN/functions.html" />
+  </DefaultSettings>
+
+  <Permissions>ReadWriteDocument</Permissions>
+
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Workbook">
+        <AllFormFactors>
+          <ExtensionPoint xsi:type="CustomFunctions">
+            <Script>
+              <SourceLocation resid="Functions.Script.Url" />
+            </Script>
+            <Page>
+              <SourceLocation resid="Functions.Page.Url" />
+            </Page>
+            <Metadata>
+              <SourceLocation resid="Functions.Metadata.Url" />
+            </Metadata>
+            <Namespace resid="Functions.Namespace" />
+          </ExtensionPoint>
+        </AllFormFactors>
+      </Host>
+    </Hosts>
+
+    <Resources>
+      <bt:Urls>
+        <bt:Url id="Functions.Script.Url" DefaultValue="https://PLACEHOLDER-HOSTING-DOMAIN/functions.js" />
+        <bt:Url id="Functions.Page.Url" DefaultValue="https://PLACEHOLDER-HOSTING-DOMAIN/functions.html" />
+        <bt:Url id="Functions.Metadata.Url" DefaultValue="https://PLACEHOLDER-HOSTING-DOMAIN/functions.json" />
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="Functions.Namespace" DefaultValue="PUMPCALC" />
+      </bt:ShortStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
