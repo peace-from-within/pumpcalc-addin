@@ -8,7 +8,7 @@
 
   <!--
     PUMPCALC Custom Functions Add-in
-    ---------------------------------------------------------------------
+    =======================================================================
     Purpose: exposes the 21 pump-hydraulics calculation functions
     (Module_For_Equation.bas) as Excel functions under the PUMPCALC
     namespace, WITHOUT embedding the calculation logic in the workbook.
@@ -22,18 +22,18 @@
     add-in private to the customer's tenant - no AppSource listing needed.
   -->
 
-  <Id>PLACEHOLDER-GENERATE-NEW-GUID</Id>
+  <Id>79947349-c76d-4418-a4cb-01db9617e479</Id>
   <Version>1.0.0.0</Version>
-  <ProviderName>PLACEHOLDER-COMPANY-NAME</ProviderName>
+  <ProviderName>PUMPCALC Team</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="PUMPCALC Functions" />
   <Description DefaultValue="Pump hydraulics calculation functions (PUMPCALC namespace) for pump differential pressure / head / control valve sizing workbooks." />
-  <IconUrl DefaultValue="https://PLACEHOLDER-HOSTING-DOMAIN/assets/icon-32.png" />
-  <HighResolutionIconUrl DefaultValue="https://PLACEHOLDER-HOSTING-DOMAIN/assets/icon-80.png" />
-  <SupportUrl DefaultValue="https://PLACEHOLDER-HOSTING-DOMAIN/support" />
+  <IconUrl DefaultValue="https://peace-from-within.github.io/pumpcalc-addin/assets/icon-32.png" />
+  <HighResolutionIconUrl DefaultValue="https://peace-from-within.github.io/pumpcalc-addin/assets/icon-80.png" />
+  <SupportUrl DefaultValue="https://peace-from-within.github.io/pumpcalc-addin/support" />
 
   <AppDomains>
-    <AppDomain>https://PLACEHOLDER-HOSTING-DOMAIN</AppDomain>
+    <AppDomain>https://peace-from-within.github.io/pumpcalc-addin</AppDomain>
   </AppDomains>
 
   <Hosts>
@@ -41,7 +41,7 @@
   </Hosts>
 
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://PLACEHOLDER-HOSTING-DOMAIN/functions.html" />
+    <SourceLocation DefaultValue="https://peace-from-within.github.io/pumpcalc-addin/functions.html" />
   </DefaultSettings>
 
   <Permissions>ReadWriteDocument</Permissions>
@@ -68,9 +68,9 @@
 
     <Resources>
       <bt:Urls>
-        <bt:Url id="Functions.Script.Url" DefaultValue="https://PLACEHOLDER-HOSTING-DOMAIN/functions.js" />
-        <bt:Url id="Functions.Page.Url" DefaultValue="https://PLACEHOLDER-HOSTING-DOMAIN/functions.html" />
-        <bt:Url id="Functions.Metadata.Url" DefaultValue="https://PLACEHOLDER-HOSTING-DOMAIN/functions.json" />
+        <bt:Url id="Functions.Script.Url" DefaultValue="https://peace-from-within.github.io/pumpcalc-addin/functions.js" />
+        <bt:Url id="Functions.Page.Url" DefaultValue="https://peace-from-within.github.io/pumpcalc-addin/functions.html" />
+        <bt:Url id="Functions.Metadata.Url" DefaultValue="https://peace-from-within.github.io/pumpcalc-addin/functions.json" />
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="Functions.Namespace" DefaultValue="PUMPCALC" />
